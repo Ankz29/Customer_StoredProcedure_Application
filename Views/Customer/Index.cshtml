@@ -1,0 +1,59 @@
+﻿@model Customer_Application.Models.Customer
+
+@{
+    ViewBag.Title = "Insertion";
+}
+
+<h2>Insertion of Data in Database</h2>
+
+<html>
+<body>
+    <div style="width: 70%; padding: 10px;color: black ; margin: auto; text-align: center">
+        @using (Html.BeginForm())
+        {
+
+            @Html.ValidationSummary(true)
+            <div>
+                @Html.LabelFor(model => model.Customer_ID):
+                @Html.TextBoxFor(model => model.Customer_ID)
+                @Html.ValidationMessageFor(model => model.Customer_ID)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Name):
+                @Html.TextBoxFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Address):
+                @Html.TextBoxFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.PhoneNumber):
+                @Html.TextBoxFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.DOB):
+                @Html.TextBoxFor(model => model.DOB)
+                @Html.ValidationMessageFor(model => model.DOB)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Email_ID):
+                @Html.TextBoxFor(model => model.Email_ID)
+                @Html.ValidationMessageFor(model => model.Email_ID)
+            </div>
+
+            <input type="submit" value="Create" />
+        }
+        <div />
+        @ViewBag.SuccessMessage
+        <div> @Html.ActionLink("back to registration", "Index")</div>
+    </div>
+</body>
+</html>
